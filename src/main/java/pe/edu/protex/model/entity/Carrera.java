@@ -33,6 +33,12 @@ public class Carrera {
 	public Carrera() {
 		estudiantes = new ArrayList<>();
 	}
+	//------------Add estudiante to Carrera------------------
+	public void addEstudiante(Estudiante estudiante) {
+		estudiante.setCarrera( this );
+		this.estudiantes.add(estudiante);
+	}
+	//------------------------------
 
 	public Integer getId() {
 		return id;
