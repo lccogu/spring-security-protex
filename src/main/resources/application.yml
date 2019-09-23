@@ -1,0 +1,70 @@
+# MySQL
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demoDB?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: MySQL
+  jpa:
+    database: MYSQL
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:      
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect.storage_engine: innodb
+        
+# SQL SERVER
+#spring:
+#  datasource:
+#    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#    url: jdbc:sqlserver://localhost:1433;databasename=demoDB
+#    username: sa
+#    password: SqlServer
+#  jpa:
+#    database: sql-server
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: false
+   
+# PostgreSQL
+#spring:
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/demoDB
+#    username: postgres
+#    password: postgres
+#  jpa:
+#    database: postgresql
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: false
+#    properties:#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        jdbc.lob.non_contextual_creation: true
+        
+# H2
+#spring:
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:file:~/data/demoDB
+#    username: sa
+#    password: admin
+#  jpa:
+#    database: h2
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: false
+#    database-platform: org.hibernate.dialect.H2Dialect
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
+
+server:  port: 8443
+  ssl:    key-store: src/main/resources/coders.p12
+    key-store-password: coders
+    key-store-type: PKCS12
+    key-alias: coders 
+    

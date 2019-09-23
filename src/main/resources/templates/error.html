@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+		<div class="card border-danger mt-5" >
+			<div class="card-header text-danger"><h5>Error</h5></div>
+			<div class="card-body text-danger">
+				<h5 class="card-title">El error tiene el siguiente detalle: </h5>
+				<p class="card-text">Status Code: <span th:text="${statusCode}"></span></p>
+				<p th:if="${exception}" class="card-text">Exception Message: <span th:text="${exception}"></span></p>
+				<p class="card-text">Request Uri: <span th:text="${uri}"></p>
+			</div>
+		</div>
+
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
